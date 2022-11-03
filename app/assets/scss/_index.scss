@@ -1,0 +1,138 @@
+.index {
+  overflow: hidden;
+  &.header {
+    position: absolute;
+    z-index: 10;
+    height: auto;
+  }
+  &.logo {
+    opacity: 0;
+  }
+  // .index__items
+  &__items {
+    height: 100vh;
+
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-template-areas:
+      "hand cup"
+      "hand grain";
+  }
+
+  // .index__item
+  &__item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    // .index__item.hand
+    &.hand {
+      grid-area: hand;
+      transform: translateX(-100%);
+
+      & .index__item-content {
+        // margin-left: 4vw;
+        // margin-bottom: 7vw;
+        transform: translateX(-40%);
+      }
+    }
+
+    // .index__item.hand
+    &.cup {
+      grid-area: cup;
+      transform: translateY(-100%);
+
+      & .index__item-content {
+        // margin-left: 2.5vw;
+        // margin-bottom: 3.5vw;
+        transform: translateY(-100%);
+      }
+
+      & img {
+        transform: scale(1.2);
+        transform-origin: center center;
+      }
+    }
+
+    // .index__item.hand
+    &.grain {
+      grid-area: grain;
+      transform: translateY(100%);
+
+      & .index__item-content {
+        // margin-left: 2.5vw;
+        // margin-bottom: 3.5vw;
+        transform: translateY(100%);
+      }
+
+      & img {
+        transform: scale(1.5);
+        transform-origin: center 75%;
+      }
+    }
+  }
+  // .index__item-content
+  &__item-content {
+    position: relative;
+    width: 100%;
+    margin-right: 4vw;
+    margin-left: 4vw;
+    margin-bottom: 5vw;
+  }
+
+  // .index__item-title
+  &__item-title {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  // .index__item-text
+  &__item-text {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+
+  // .index__item-btn
+  &__item-btn {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 300px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s;
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  // .index__item-img
+  &__item-img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+body.ready .index__item {
+  transform: translateX(0) translateY(0) !important;
+  transition: 1.5s 1s;
+}
+body.ready .index__item-content {
+  transform: translateX(0) translateY(0) !important;
+  transition: 1.5s 1.5s;
+}
+body.ready .index.logo {
+  opacity: 1;
+  transition: 2s 2s;
+}
