@@ -1,5 +1,5 @@
 # bodraya-corp
-view - https://clck.ru/32ZzMC
+<a href="https://clck.ru/32ZzMC" target="_blank">view live example</a><br>
 
 #en
 <h3>Project goal</h3>
