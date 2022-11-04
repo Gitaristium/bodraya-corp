@@ -1,4 +1,5 @@
 # bodraya-corp
+view - https://clck.ru/32ZzMC
 
 #en
 <h3>Project goal</h3>
